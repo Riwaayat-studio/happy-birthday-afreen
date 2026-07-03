@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Sage Chronicles — Afreen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700;900&family=Cormorant+Garamond:ital,wght@1,600;1,700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="blastCanvas"></canvas>
+
+    <div id="gift-vault-screen">
+        <div class="canvas-3d-container">
+            <canvas id="three-gift-canvas"></canvas>
+        </div>
+        <p class="action-word premium-action-text neon-pulse">TAP TO UNLOCK THE SURPRISE</p>
+    </div>
+
+    <div id="main-content-vault">
+        
+        <header class="hero-header-zone">
+            <h1 class="main-title-cinzel">Happy Birthday <span>Afreen</span></h1>
+            <p class="sub-quote">"A cinematic time-capsule wrapped in sage aesthetics and beautiful chaos."</p>
+            <p class="action-word premium-action-text scroll-indicator">SCROLL DOWN</p>
+        </header>
+
+        <section class="section-container">
+            <h2 class="section-title">The Sage Lookbook</h2>
+            <div class="stack-deck-wrapper">
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178056.png" alt="Afreen 1">
+                    <p class="card-caption">Ye jo side-eye aur nakhre wali smile hai na, isi se saara chaos shuru hota hai!</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178052.png" alt="Afreen 2">
+                    <p class="card-caption">Elegant traditional vibes, lights ke sath poori queen lag rahi ho boss.</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178050.png" alt="Afreen 3">
+                    <p class="card-caption">Dupatta adjust karte huye kahan gum ho? Bilkul candid shanti lag rahi hai.</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178051.png" alt="Afreen 4">
+                    <p class="card-caption">Parda gira kar ye jo acting chal rahi hai na, Bollywood me try karna chahiye!</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178053.png" alt="Afreen 5">
+                    <p class="card-caption">Face hide karne se kya hoga, humein pata hai piche kaun muskura raha hai.</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178059.png" alt="Afreen 6">
+                    <p class="card-caption">Squadgoals! Pure chaotic sibling energy ek hi frame me.</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178054.png" alt="Afreen 7">
+                    <p class="card-caption">Pose ekdum perfect hai, bilkul simple aur elegant aura.</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178049.png" alt="Afreen 8">
+                    <p class="card-caption">Wait... ye filter kiski choice thi? Ye bohot funny aur cute hai!</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178058.png" alt="Afreen 9">
+                    <p class="card-caption">Rock-Paper-Scissors chal raha hai ya koi secret plan discuss ho raha hai?</p>
+                </div>
+                <div class="stack-card-item auto-parallax">
+                    <img src="1000178057.png" alt="Afreen 10">
+                    <p class="card-caption">Night walks aur badhiya moments, Mumbai se Lucknow tak ki best yaadein.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container" id="videoSectionNode">
+            <h2 class="section-title">The Secret Footage</h2>
+            <p class="vlog-heading-hinglish">Ghar Ke Sabse Chaotic Moments</p>
+            <div class="smartphone-frame video-outline-aura">
+                <video id="vlogVideo" loop playsinline controls>
+                    <source src="bday-vlog.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-title">The Memory Lane Wish</h2>
+            <div class="scratch-canvas-container physical-depth-box">
+                <div class="secret-birthday-message">
+                    <p>Happy Birthday, Moti! Haan mujhe pata hai tumhein ye naam bilkul pasand nahi hai, par mere liye tum hamesha meri wahi pyaari aur thodi si chaotic behen rahogi. Mumbai ke wo saare din aur yahan Lucknow me tumhare sath bitaye hamesha special rahenge. Allah tumhein hamesha khush rakhe aur tumhare saare dreams poore karein. Have an amazing day, Moti! 🎂✨</p>
+                </div>
+                <canvas id="scratchCanvas"></canvas>
+            </div>
+            <p class="action-word premium-action-text scratch-hint-text">SCRATCH TO REVEAL MESSAGE</p>
+        </section>
+
+        <footer>
+            <p class="footer-note">Designed for Afreen by Riwaayat Studio · 2026</p>
+        </footer>
+
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="bday-track.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
