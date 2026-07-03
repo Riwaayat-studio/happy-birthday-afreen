@@ -15,7 +15,6 @@ function initReal3DModelEngine() {
     renderer.setSize(canvas3D.clientWidth, canvas3D.clientHeight);
     renderer.setClearColor(0x000000, 0); 
 
-    // Light Shadows Environment Setup
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.85); 
     scene.add(ambientLight);
 
@@ -23,36 +22,30 @@ function initReal3DModelEngine() {
     pointLight.position.set(5, 5, 5);
     scene.add(pointLight);
 
-    // Replaced Pink/Burgundy lighting pipeline with Soft Premium Sage Green Light Accent
     const sageLight = new THREE.PointLight(0x8fbc8f, 1.8, 30); 
     sageLight.position.set(-5, -3, 3);
     scene.add(sageLight);
 
     giftBoxGroup = new THREE.Group();
 
-    // Custom Luxury Matte Sage Green Material Matrix
     const sageVelvetMaterial = new THREE.MeshLambertMaterial({ color: 0x2e4f41 }); 
     const ribbonMaterial = new THREE.MeshLambertMaterial({ color: 0xffd700 });  
 
-    // Build Box Base Body Mesh (3D Cube Object)
     const bodyGeom = new THREE.BoxGeometry(2, 1.5, 2);
     const boxBodyMesh = new THREE.Mesh(bodyGeom, sageVelvetMaterial);
     boxBodyMesh.position.y = -0.3;
     giftBoxGroup.add(boxBodyMesh);
 
-    // Build Box Lid Mesh (3D Cap)
     const lidGeom = new THREE.BoxGeometry(2.1, 0.4, 2.1);
     boxLidMesh = new THREE.Mesh(lidGeom, new THREE.MeshLambertMaterial({ color: 0x243e33 }));
     boxLidMesh.position.y = 0.55;
     giftBoxGroup.add(boxLidMesh);
 
-    // Vertical Ribbon Matrix
     const ribbonVGeom = new THREE.BoxGeometry(0.25, 1.55, 2.02);
     const ribbonVMesh = new THREE.Mesh(ribbonVGeom, ribbonMaterial);
     ribbonVMesh.position.y = -0.3;
     giftBoxGroup.add(ribbonVMesh);
 
-    // Horizontal Ribbon Matrix
     const ribbonHGeom = new THREE.BoxGeometry(2.02, 1.55, 0.25);
     const ribbonHWithLid = new THREE.Mesh(ribbonHGeom, ribbonMaterial);
     ribbonHWithLid.position.y = -0.3;
@@ -60,7 +53,6 @@ function initReal3DModelEngine() {
 
     scene.add(giftBoxGroup);
 
-    // Real Animation Render Frame Loop
     let floatClock = 0;
     function render3DFrameLoop() {
         requestAnimationFrame(render3DFrameLoop);
@@ -129,7 +121,6 @@ function triggerBirthdayBlast() {
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 
     let particles = [];
-    // Custom Elegant Sage & Liquid Gold Confetti Matrix
     const colors = ['#8FBC8F', '#FFD700', '#2E4F41', '#F0F7F4', '#DAA520'];
 
     for (let i = 0; i < 160; i++) {
@@ -182,35 +173,9 @@ function initScrollSurveillance() {
     });
 
     cards.forEach(card => scrollObserver.observe(card));
-    window.addEventListener('scroll', crossfadeAudioSurveillance);
 }
 
-// 🎵 5. VIDEO AUDIO DUCK ENGINE
-function crossfadeAudioSurveillance() {
-    const videoSection = document.getElementById('videoSectionNode');
-    const bdayVideo = document.getElementById('vlogVideo');
-    const bgMusic = document.getElementById('bgMusic');
-    
-    if (!videoSection || !bdayVideo || !bgMusic) return;
-
-    const bounds = videoSection.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-
-    if (bounds.top < viewportHeight * 0.6 && bounds.bottom > viewportHeight * 0.4) {
-        if (bdayVideo.paused) {
-            bdayVideo.play().catch(e => console.log("Video active."));
-            bgMusic.volume = 0.12; 
-            bdayVideo.volume = 0.95;
-        }
-    } else {
-        if (!bdayVideo.paused) {
-            bdayVideo.pause();
-            bgMusic.volume = 0.65; 
-        }
-    }
-}
-
-// 🧮 6. BRUSHED METAL SCRATCH SURFACE GENERATOR
+// 🧮 5. BRUSHED METAL SCRATCH SURFACE GENERATOR
 function initScratchModule() {
     const canvas = document.getElementById('scratchCanvas');
     if (!canvas) return;
@@ -262,5 +227,5 @@ function initScratchModule() {
     canvas.addEventListener('touchstart', () => isDrawing = true);
     canvas.addEventListener('touchend', () => isDrawing = false);
     canvas.addEventListener('touchmove', scratchAction);
-                }
-      
+        }
+            
