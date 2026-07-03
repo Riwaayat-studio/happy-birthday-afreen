@@ -1,0 +1,127 @@
+/* ══ RESET & GLOBAL MESH CORE ══ */
+*, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --bg-obsidian-black: #080D0B;
+    --bg-mesh-gradient: radial-gradient(circle at 50% 50%, #1A2E26 0%, #080D0B 85%);
+    --sage-cream: #F0F7F4;
+    --liquid-gold: #FFD700;
+    --neon-sage-glow: rgba(143, 188, 143, 0.4);
+    --border-aura-glow: 3px solid #8FBC8F; /* Soft Sage Green Accent */
+}
+
+body {
+    background: var(--bg-obsidian-black);
+    color: var(--sage-cream);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+#blastCanvas {
+    position: fixed; inset: 0; z-index: 99998; pointer-events: none; display: none;
+}
+
+.action-word.premium-action-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: var(--liquid-gold);
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.95);
+}
+
+#gift-vault-screen {
+    position: fixed; inset: 0; z-index: 99999;
+    background: radial-gradient(circle at 50% 45%, #182C24 0%, #040806 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.canvas-3d-container {
+    width: 100%; max-width: 380px; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
+    background: transparent !important;
+    outline: none !important;
+    border: none !important;
+}
+
+#three-gift-canvas {
+    width: 100% !important; height: 100% !important; cursor: pointer;
+    background: transparent !important;
+    outline: none !important;
+}
+
+#main-content-vault {
+    display: none; opacity: 0; background: var(--bg-mesh-gradient); min-height: 100vh; transition: opacity 1.2s ease;
+}
+
+.hero-header-zone { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+
+.main-title-cinzel {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 900; font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+    text-align: center; line-height: 1.3; color: var(--sage-cream);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.95);
+}
+
+.main-title-cinzel span {
+    display: block; font-size: 1.2em; margin-top: 0.6rem; color: var(--liquid-gold);
+    text-shadow: 0 8px 30px rgba(0,0,0,0.95), 0 0 40px rgba(255,215,0,0.6);
+}
+
+.sub-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;
+    color: rgba(240,247,244,0.7); text-align: center; max-width: 580px; margin-top: 2.5rem; font-size: 1.4rem; line-height: 1.7;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+.section-container { padding: 7rem 1.5rem; display: flex; flex-direction: column; align-items: center; }
+.section-title {
+    font-family: 'Cinzel', serif; font-weight: 900; font-size: 2.1rem; color: var(--liquid-gold); margin-bottom: 5rem; text-transform: uppercase; letter-spacing: 0.25em;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+
+.stack-deck-wrapper { width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 9rem; }
+
+.stack-card-item {
+    background: rgba(255,255,255,0.01); border: 2px solid rgba(143, 188, 143, 0.15); border-radius: 8px;
+    padding: 1.3rem 1.3rem 2.8rem 1.3rem; box-shadow: 0 35px 70px rgba(0,0,0,0.8);
+    transform: scale(0.93); opacity: 0.45; filter: blur(4px);
+    transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.7s, box-shadow 0.7s, opacity 0.7s, filter 0.7s;
+}
+
+.stack-card-item.active-center {
+    transform: scale(1.06); opacity: 1; filter: blur(0px);
+    border-color: #8FBC8F; box-shadow: 0 35px 65px var(--neon-sage-glow), inset 0 0 20px rgba(143,188,143,0.1);
+}
+
+.stack-card-item img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; margin-bottom: 2rem; }
+
+.card-caption {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: 1.35rem; text-align: center; color: var(--sage-cream); line-height: 1.6;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+}
+
+.vlog-heading-hinglish { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 700; font-size: 2rem; color: var(--sage-cream); margin-bottom: 2.5rem; text-align: center; }
+.smartphone-frame { width: min(315px, 85vw); aspect-ratio: 9/16; background: #000; border-radius: 26px; overflow: hidden; margin: 0 auto; }
+.video-outline-aura { border: var(--border-aura-glow); box-shadow: 0 0 35px var(--neon-sage-glow); }
+.smartphone-frame video { width: 100%; height: 100%; object-fit: cover; }
+
+.physical-depth-box {
+    border: 3px solid #8FBC8F; border-radius: 8px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.95), inset 0 1px 3px rgba(255,255,255,0.15);
+}
+.scratch-canvas-container { position: relative; width: 100%; max-width: 450px; aspect-ratio: 1.8/1; background: #0B1411; overflow: hidden; }
+.secret-birthday-message { position: absolute; inset: 0; padding: 1.8rem; display: flex; align-items: center; justify-content: center; text-align: center; }
+.secret-birthday-message p { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 1.35rem; line-height: 1.7; color: var(--sage-cream); font-style: italic; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+#scratchCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 3; }
+
+footer { text-align: center; padding: 5rem 1rem; border-top: 1px solid rgba(255,255,255,0.04); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.25em; opacity: 0.35; }
+  
